@@ -1,0 +1,53 @@
+:root {
+  --color-background: #3d4552;
+  --color-logo: #facf39;
+  --color-logo-soft: #fbdb6b;
+  --color-background-soft: #ffffff;
+  --color-background-secondary: #535e6f;
+  --color-background-tertiary: #272c35;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:  #2e3338;
+  border: .25rem solid transparent;
+  background-clip: padding-box;
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.8);
+}
+
+::-webkit-scrollbar-track {
+  border: .25rem solid transparent;
+  background-clip: padding-box;
+  border-radius: .5rem;
+  background-color: #535e6f;
+}
