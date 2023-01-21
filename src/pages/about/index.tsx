@@ -5,8 +5,8 @@ import {
   Text,
   Link,
   useMediaQuery,
+  Image,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import { generateTextLinearGradient } from "../../utils/generateGradient";
 import eu from "./assets/eu.png";
 import { NextPage } from "next";
@@ -51,10 +51,10 @@ const AboutPage: NextPage = () => {
           {property.header}
         </Heading>
         <Flex
-          as={isDesktopScreen ? "section" : "div"}
+          as={"section"}
           justifyContent={["center", "flex-start"]}
           flexWrap={["wrap-reverse", "wrap-reverse", "wrap-reverse"]}
-          marginY={isDesktopScreen ? "2rem" : "12rem"}
+          marginY={"2rem"}
           gap={["1rem"]}
           height={400}
         >
@@ -65,91 +65,84 @@ const AboutPage: NextPage = () => {
             flexWrap={["wrap-reverse", "wrap-reverse", "wrap-reverse"]}
             gap={["1rem"]}
           >
-            <Box
-              color="brand.secondary"
-              fontSize="medium"
-            >
+            <Box color="brand.secondary" fontSize="medium">
               {property.intro}
             </Box>
-            <Box
-              color="brand.secondary"
-              fontSize="medium"
-            >
+            <Box color="brand.secondary" fontSize="medium">
               {property.text}
             </Box>
-            <Box
-              color="brand.secondary"
-              fontSize="medium"
-            >
+            <Box color="brand.secondary" fontSize="medium">
               {property.close}
             </Box>
-            <Text as="p" fontSize="xl" color="brand.primary" fontWeight="bold">
-              {property.formation}
-            </Text>
-            <Flex
-              as="p"
-              fontSize="medium"
-              color="brand.secondary"
-              flexDirection={!isDesktopScreen ? "column" : "row"}
-            >
-              <Link
-                fontSize="medium"
-                color="brand.primary"
-                href="https://www.etecalberteinstein.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
-                textDecoration={"underline"}
-                textUnderlineOffset={2}
-                _hover={{
-                  opacity: 0.8,
-                  transition: "opacity 0.2s ease-in-out",
-                }}
-              >
-                {property.school}
-              </Link>
-              <Text marginX="0.5rem">{isDesktopScreen && "•"}</Text>
-              <Text as="p">{property.study}</Text>
-            </Flex>
-            <Text as="p" fontSize="xl" color="brand.primary" fontWeight="bold">
-              {property.career}
-            </Text>
-            <Flex
-              as="p"
-              fontSize="medium"
-              color="brand.secondary"
-              flexDirection={!isDesktopScreen ? "column" : "row"}
-            >
-              <Link
-                fontSize="medium"
-                color="brand.primary"
-                href="http://www.e-gestao.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
-                textDecoration={"underline"}
-                textUnderlineOffset={2}
-                _hover={{
-                  opacity: 0.8,
-                  transition: "opacity 0.2s ease-in-out",
-                }}
-              >
-                {property.company}
-              </Link>
-              <Text marginX="0.5rem">{isDesktopScreen && "•"}</Text>
-              <Text as="p">{property.work}</Text>
-            </Flex>
           </Flex>
-          {isDesktopScreen && (
             <Image
-              src={eu}
+              src="https://github.com/maicxn.png"
               alt="Maicon Oliveira - Front End Developer"
               title="Maicon Oliveira - Front End Developer"
-              width={200}
-              height={200}
+              width={350}
+              height={390}
+              objectFit="cover"
+              borderRadius={8}
+              flexShrink={0}
+              flex={1}
             />
-          )}
+        </Flex>
+        <Text as="p" fontSize="xl" color="brand.primary" fontWeight="bold">
+          {property.formation}
+        </Text>
+        <Flex
+          as="p"
+          fontSize="medium"
+          color="brand.secondary"
+          flexDirection={!isDesktopScreen ? "column" : "row"}
+        >
+          <Link
+            fontSize="medium"
+            color="brand.primary"
+            href="https://www.etecalberteinstein.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            textDecoration={"underline"}
+            textUnderlineOffset={2}
+            _hover={{
+              opacity: 0.8,
+              transition: "opacity 0.2s ease-in-out",
+            }}
+          >
+            {property.school}
+          </Link>
+          <Text marginX="0.5rem">{isDesktopScreen && "•"}</Text>
+          <Text as="p">{property.study}</Text>
+        </Flex>
+        <Text as="p" fontSize="xl" color="brand.primary" fontWeight="bold">
+          {property.career}
+        </Text>
+        <Flex
+          as="p"
+          fontSize="medium"
+          color="brand.secondary"
+          flexDirection={!isDesktopScreen ? "column" : "row"}
+        >
+          <Link
+            fontSize="medium"
+            color="brand.primary"
+            href="http://www.e-gestao.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            textDecoration={"underline"}
+            textUnderlineOffset={2}
+            _hover={{
+              opacity: 0.8,
+              transition: "opacity 0.2s ease-in-out",
+            }}
+          >
+            {property.company}
+          </Link>
+          <Text marginX="0.5rem">{isDesktopScreen && "•"}</Text>
+          <Text as="p">{property.work}</Text>
         </Flex>
       </Flex>
     </>
   );
-}
-export default AboutPage
+};
+export default AboutPage;
