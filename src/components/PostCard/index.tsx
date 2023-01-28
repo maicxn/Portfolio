@@ -16,7 +16,7 @@ export const PostCard: FunctionComponent<PostCardProps> = ({
 }) => {
   return (
     <Card>
-      <Link href={`/blog/posts/${slug}`}>
+      <Link href={`/blog/${slug}`}>
           <Heading
             as="h2"
             color="brand.primary"
