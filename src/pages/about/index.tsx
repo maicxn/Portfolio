@@ -8,7 +8,6 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { generateTextLinearGradient } from "../../utils/generateGradient";
-import eu from "./assets/eu.png";
 import { NextPage } from "next";
 
 const AboutPage: NextPage = () => {
@@ -50,31 +49,32 @@ const AboutPage: NextPage = () => {
         >
           {property.header}
         </Heading>
-        <Flex
-          as={"section"}
-          justifyContent={["center", "flex-start"]}
-          flexWrap={["wrap-reverse", "wrap-reverse", "wrap-reverse"]}
-          marginY={"2rem"}
-          gap={["1rem"]}
-          height={400}
-        >
+        <Flex as="section" flexDirection="column" marginTop={isDesktopScreen ? "1.5rem" : "23rem"}>
           <Flex
-            flex={1}
-            flexDirection={"column"}
+            as={"section"}
             justifyContent={["center", "flex-start"]}
             flexWrap={["wrap-reverse", "wrap-reverse", "wrap-reverse"]}
+            marginY={"2rem"}
             gap={["1rem"]}
+            height={400}
           >
-            <Box color="brand.secondary" fontSize="medium">
-              {property.intro}
-            </Box>
-            <Box color="brand.secondary" fontSize="medium">
-              {property.text}
-            </Box>
-            <Box color="brand.secondary" fontSize="medium">
-              {property.close}
-            </Box>
-          </Flex>
+            <Flex
+              flex={1}
+              flexDirection={"column"}
+              justifyContent={["center", "flex-start"]}
+              flexWrap={["wrap-reverse", "wrap-reverse", "wrap-reverse"]}
+              gap={["1rem"]}
+            >
+              <Box color="brand.secondary" fontSize="medium">
+                {property.intro}
+              </Box>
+              <Box color="brand.secondary" fontSize="medium">
+                {property.text}
+              </Box>
+              <Box color="brand.secondary" fontSize="medium">
+                {property.close}
+              </Box>
+            </Flex>
             <Image
               src="https://github.com/maicxn.png"
               alt="Maicon Oliveira - Front End Developer"
@@ -86,6 +86,7 @@ const AboutPage: NextPage = () => {
               flexShrink={0}
               flex={1}
             />
+          </Flex>
         </Flex>
         <Text as="p" fontSize="xl" color="brand.primary" fontWeight="bold">
           {property.formation}
